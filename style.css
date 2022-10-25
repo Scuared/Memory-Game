@@ -1,0 +1,26 @@
+.cardContainer{
+    display: grid;
+    grid-template-areas: 'a b c d'
+                         'e f g h'
+                         'i j k l';
+                         justify-content: center;
+
+}
+.card{
+    border: solid black 1px;
+    border-radius: 5px;
+    max-width: 150px;
+    max-height: 228px;
+}
+.card > img{
+    max-width: 100%;
+    max-height: 228px;
+    
+}
+.cardBack{
+    min-height: 228px;
+}
+.cardButton{
+    margin: 6px;
+    padding: 0;
+}
