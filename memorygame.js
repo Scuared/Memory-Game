@@ -1,11 +1,16 @@
 var animalcards = document.getElementsByClassName('animalCard');
 var cardbacks = document.getElementsByClassName('cardBack');
+var buttons = document.getElementsByClassName('cardButton');
+var grid = document.getElementsByClassName("cardContainer");
+reset();
 for(let i = 0; i < animalcards.length; i++){
     animalcards[i].style.display = "none";
 }
 var temparray = [];
 var i = 0;
 var score = 0;
+
+
 function showCard(card){
         cardID = card.children[0];
         cardID = cardID.id;
@@ -37,12 +42,18 @@ function isMatch(card1, card2){
     }
     else{
         console.log('match');
+        card1.disabled = true;
+        card2.disabled = true;
         score++;
         drawScore();
     }
 };
 function reset(){
     score = 0;
+    let rows = [];
+    let columns = [];
+    let row = 0;
+    let column = 0;
     for(let i = 0; i < animalcards.length; i++){
         animalcards[i].style.display = "none";
         cardbacks[i].style.display = "block";
